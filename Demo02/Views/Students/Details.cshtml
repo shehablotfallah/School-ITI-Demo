@@ -1,0 +1,84 @@
+﻿@model Student
+@{
+    ViewData["Title"] = "Details Student";
+}
+<div class="container mt-3 pb-3">
+    <div class="card">
+        <div class="card-header alert alert-success">
+            <h3 class="text-uppercase text-center">@ViewData["Title"]</h3>
+        </div>
+        <div class="card-body">
+                    <div>
+                <dl class="row mb-5">
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.Id)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Html.DisplayFor(model => model.Id)
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.Name)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Html.DisplayFor(model => model.Name)
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.Age)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Html.DisplayFor(model => model.Age)
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        Status
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        <span class="badge bg-@(Model.IsDeleted ? "danger" : "success")">
+                            @(Model.IsDeleted? "Deleted" : "Available")
+                        </span>
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Html.DisplayFor(model => model.Email)
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.Password)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Html.DisplayFor(model => model.Password)
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.Department!.Name)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Html.DisplayFor(model => model.Department!.Name)
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.CreatedOn)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Model.CreatedOn.ToString("dd MMM, yyyy")
+                    </dd>
+                    <dt class="col-sm-2 mb-2">
+                        @Html.DisplayNameFor(model => model.LastUpdatedOn)
+                    </dt>
+                    <dd class="col-sm-10 mb-2">
+                        @Model.LastUpdatedOn?.ToString("dd MMM, yyyy")
+                    </dd>
+                </dl>
+            </div>
+            <div>
+                <a class="btn btn-success mr-2" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+                <span>
+                    <a class="btn btn-secondary ml-2 text-capitalize" asp-action="Index">
+                        <i class="bi bi-arrow-left"></i>
+                        Back to List
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+

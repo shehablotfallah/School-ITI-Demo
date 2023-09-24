@@ -1,0 +1,26 @@
+﻿@model Department
+
+<link href="~/css/style.bundle.css" rel="stylesheet" />
+<tr class="text-center">
+    <td>@Model.Id</td>
+    <td>@Model.Name</td>
+    <td>
+        <span class="badge bg-@(Model.IsDeleted ? "danger" : "success")">
+            @(Model.IsDeleted? "Deleted" : "Available")
+        </span>
+    </td>
+    <td>@Model.CreatedOn.ToString("dd MMM, yyyy")</td>
+    <td>@Model.LastUpdatedOn?.ToString("dd MMM, yyyy")</td>
+    <td>
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" style="background:gray; color:#fff" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Action
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item details" asp-action="Details" asp-route-id="@Model.Id">Details</a></li>
+                <li><a class="dropdown-item edit" asp-action="Edit" asp-route-id="@Model.Id">Edit</a></li>
+                <li><a class="dropdown-item toggle-status" asp-action="ToggleStatus" asp-route-id="@Model.Id" onclick="return confirm('Are you sure you want to toggle status this department @Model.Name?')">Toggle Status</a></li>
+            </ul>
+        </div>
+    </td>
+</tr>

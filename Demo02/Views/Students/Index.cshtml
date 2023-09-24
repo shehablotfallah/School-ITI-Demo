@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "Students";
+}
+<div class="container mt-3 pb-3">
+    <div class="card">
+        <div class="card-header alert alert-success d-flex align-items-center justify-content-between">
+            <h3 class=" d-inline-flex align-items-center">
+                <i class="bi bi-person-lines-fill"></i>
+                <span class="mx-2 text-uppercase text-center">@ViewData["Title"]</span>
+            </h3>
+            <a asp-action="Create" class="btn btn-success">
+                <i class="bi bi-plus-square-dotted"></i>
+                Add
+            </a>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="text-center">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Status</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Department</th>
+                        <th>Created On</th>
+                        <th>Last Updated On</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                        <partial name="_StudentRow" model="@student"/>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

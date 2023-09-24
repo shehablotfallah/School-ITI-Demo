@@ -1,0 +1,52 @@
+﻿@model DepartmentFormViewModel
+
+@{
+    ViewData["Title"] = "Departments";
+}
+
+<div class="container mt-3 pb-3">
+    <div class="card">
+        <div class="card-header alert alert-success">
+            <h3 class="text-uppercase text-center">@(Model?.Id > 0 ? "Edit" : "Create") @ViewData["Title"]</h3>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="@(Model?.Id > 0 ? "Edit" : "Create")">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-5">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group mb-3">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" placeholder="Name of Department" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            @if (Model?.Id > 0)
+                            {
+                                <div class="form-check form-switch">
+                                    <label asp-for="IsDeleted" type="checkbox"  class="form-check-label"></label>
+                                    <input asp-for="IsDeleted" class="form-check-input" />
+                                    <span asp-validation-for="IsDeleted" class="text-danger"></span>
+                                </div>
+                            }
+                        </div>
+            
+                        <div class="form-group">
+                            <input type="submit" value="@(Model?.Id > 0 ? "Save Changes" : "Create")" class="btn btn-primary" /> | 
+                            <span>
+                                <a class="btn btn-secondary ml-2 text-capitalize" asp-action="Index">
+                                    <i class="bi bi-arrow-left"></i>
+                                    Back to List
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial"/>
+}

@@ -1,0 +1,25 @@
+﻿
+<header>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-0">
+        <div class="container">
+            <a class="navbar-brand mb-0 fw-bold fs-1 h1" asp-area="" asp-controller="Home" asp-action="Index"><span class="text-warning me-3"><i class="bi bi-bank"></i></span>Sch<em class="text-success">óò</em>l</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse-button" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse-button collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item fs-5 fw-medium">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" active-when="Home">Home</a>
+                    </li>
+                    <li class="nav-item fs-5 fw-medium">
+                        <a class="nav-link" asp-area="" asp-controller="Students" asp-action="Index" active-when="Students">Students</a>
+                    </li>
+                    <li class="nav-item fs-5 fw-medium">
+                        <a class="nav-link" asp-area="" asp-controller="Departments" asp-action="Index" active-when="Departments">Departments</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

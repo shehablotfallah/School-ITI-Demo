@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+* {
+    font-family: 'Tajawal', sans-serif;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+/* */
+
+
+.main{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    align-items: center;
+    /*background: url(https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wHgk?ver=64f7) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;*/
+}
+
+
+.navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show > .nav-link {
+    color: rgb(25, 135, 84);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #f0f0f0;
+}
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+    color: rgb(25, 135, 84);
+}
+
+.spinner-style {
+    background-color: #ffffff;
+    background-image: url('../images/preloader.gif');
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    right: 0px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99999;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #1e2125;
+    background-color: #D1E7DD;
+}
+
+.details:focus, .details:hover {
+    color: #fff;
+    background-color: #0D6EFD;
+}
+
+.edit:focus, .edit:hover {
+    color: #fff;
+    background-color: #198754;
+}
+
+.toggle-status:focus, .toggle-status:hover {
+    color: #fff;
+    background-color: #DC3545;
+}
+
