@@ -2,17 +2,17 @@
 
 public interface IStudentsService
 {
-    IEnumerable<Student> GetAllStudents();
+	IEnumerable<Student> GetAllStudents();
 
-    Student? GetStudentById(int id);
-    Student? GetStudentByEmail(string email);
+	Student? GetStudentById(int id);
+	Student? GetStudentByEmail(string email);
 
-    void Create(StudentFormViewModel model);
+	void Create(StudentFormViewModel model);
 
-    void ToggleStatus(Student student);
+	void ToggleStatus(Student student);
 
-    StudentFormViewModel GetUpdate(Student student);
+	StudentFormViewModel GetUpdate(Student student);
 
-    void Update(Student student,StudentFormViewModel model);
-    
+	void Update(Student student, StudentFormViewModel model);
+
 }

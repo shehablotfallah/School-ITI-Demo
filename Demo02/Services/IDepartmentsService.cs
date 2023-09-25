@@ -2,20 +2,20 @@
 
 public interface IDepartmentsService
 {
-    IEnumerable<Department> GetAllDepartments();
+	IEnumerable<Department> GetAllDepartments();
 
-    Department? GetDepartmentById(int id);
-    Department? GetDepartmentByName(string name);
+	Department? GetDepartmentById(int id);
+	Department? GetDepartmentByName(string name);
 
-    void Create(DepartmentFormViewModel model);
+	void Create(DepartmentFormViewModel model);
 
-    void ToggleStatus(Department department);
+	void ToggleStatus(Department department);
 
-    DepartmentFormViewModel GetUpdate(Department department);
+	DepartmentFormViewModel GetUpdate(Department department);
 
-    void Update(Department department, DepartmentFormViewModel model);
+	void Update(Department department, DepartmentFormViewModel model);
 
-    IEnumerable<SelectListItem> GetSelectList();
+	IEnumerable<SelectListItem> GetSelectList();
 
-    IEnumerable<SelectListItem> GetSelectListWithDeleted();
+	IEnumerable<SelectListItem> GetSelectListWithDeleted();
 }

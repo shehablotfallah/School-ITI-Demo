@@ -48,6 +48,7 @@
 
                             @if (Model?.Id > 0)
                             {
+                                <input type="hidden" asp-for="Id" />
                                 <div class="form-check form-switch">
                                     <label asp-for="IsDeleted" type="checkbox"  class="form-check-label"></label>
                                     <input asp-for="IsDeleted" class="form-check-input" />
