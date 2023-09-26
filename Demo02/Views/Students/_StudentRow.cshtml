@@ -10,7 +10,7 @@
         </span>
     </td>
     <td>@Model.Email</td>
-    <td>@Model.Password.PadLeft(15,'*')</td>
+    <td>@Model.Password.PadRight(15, '*').PadLeft(20, '*')</td>
     <td>@Model.Department!.Name</td>
     <td>@Model.CreatedOn.ToString("dd MMM, yyyy")</td>
     <td>@Model.LastUpdatedOn?.ToString("dd MMM, yyyy")</td>

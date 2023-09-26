@@ -19,7 +19,7 @@ public class DepartmentsService : IDepartmentsService
 	{
 		Department department = new()
 		{
-			Name = model.Name,
+			Name = model.Name.ToUpper(),
 			CreatedOn = DateTime.Now,
 		};
 		_context.Add(department);
@@ -47,7 +47,7 @@ public class DepartmentsService : IDepartmentsService
 
 	public void Update(Department department, DepartmentFormViewModel model)
 	{
-		department.Name = model.Name;
+		department.Name = model.Name.ToUpper();
 		department.IsDeleted = model.IsDeleted;
 		department.LastUpdatedOn = DateTime.Now;
 		_context.SaveChanges();
