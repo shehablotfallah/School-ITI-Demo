@@ -11,9 +11,12 @@
                 <i class="bi bi-layers-half"></i>
                 <span class="mx-2 text-uppercase text-center">@ViewData["Title"]</span>
             </h3>
-            <a asp-action="Create" class="btn btn-success">
+            <a asp-action="Create" class="btn btn-success position-relative">
                 <i class="bi bi-plus-square-dotted"></i>
                 Add
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    @Model.Count()
+                </span>
             </a>
         </div>
         <div class="card-body">
